@@ -1,5 +1,5 @@
 {
-  "name": "restful-blog-app",
+  "name": "restful-recipe-app",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -10,7 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "consolidate": "^0.14.5",
     "express": "^4.15.2",
-    "mongoose": "^4.9.5"
+    "express-sanitizer": "^1.0.2",
+    "method-override": "^2.3.8",
+    "mongoose": "^4.9.5",
+    "nunjucks": "^3.0.0"
   }
 }

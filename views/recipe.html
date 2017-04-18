@@ -1,0 +1,35 @@
+{% include "partials/header.html" %}
+
+
+
+<div class="ui main text container segment">
+  <div class="ui huge header">{{recipe.title}}</div>
+  <div class="ui top attached">
+    <div class="item">
+      <img class="ui centered rounded image" src="{{recipe.image}}" />
+      <div class="content">
+        {{recipe.created.toDateString()}}
+      </div>
+      <div class="description">
+        {{ recipe.body | safe }}
+      </div>
+
+
+
+<form action="/recipes/{{recipe._id}}?_method=DELETE" method="POST">
+  <a class="ui button" href="{{recipe["_id"]}}/edit">Edit</a>
+  <button class="ui button red" type="submit">Delete</button>
+
+</form>
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,22 @@
+{% include "partials/header.html" %}
+<br>
+<br>
+<br>
+<br>
+<div class="ui main text container">
+  <div class="ui form">
+<form action="/recipes/{{recipe['_id']}}?_method=PUT" method="POST">
+  <div class="field">
+    <input type="text" placeholder="Recipe Title" id="title" name="title" value="{{recipe.title}}">
+  </div>
+  <div class="field">
+    <input type="text" placeholder="Image URL" id="image-url" name="image" value="{{recipe.image}}">
+  </div>
+  <div class="field">
+    <textarea placeholder="Recipe" id="body" name="body">{{recipe.body}}</textarea>
+  </div>
+   <button class="ui button" type="submit">Update</button>
+</form>
+</div>
+</div>
+{% include "partials/footer.html" %}

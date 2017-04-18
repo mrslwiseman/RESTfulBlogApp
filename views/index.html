@@ -1,0 +1,22 @@
+{% include "partials/header.html" %}
+
+<h1>Recipes Page</h1>
+<ul>
+{% for recipe in recipes %}
+
+<img src="{{recipe.image}}" />
+<li><a href="../recipes/{{recipe["_id"]}}"> {{recipe.title}}</a></li>
+{% set body = recipe.body %}
+
+
+{% if(body.length >= 100)%}
+{% set body = body.substring(0,100) + " ..."%}
+{% endif %}
+
+ <li>{{body}}</li>
+<li>{{recipe.created.toDateString()}}</li>
+{% endfor %}
+</ul>
+
+{% include "partials/footer.html" %}
+<div>
