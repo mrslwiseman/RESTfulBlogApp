@@ -8,7 +8,7 @@ let express         = require('express'),
     app             = express();
 
 //APP CONFIG
-// mongoose.connect('mongodb://localhost/restful_recipe_app');
+ mongoose.connect('mongodb://test:test@ds163340.mlab.com:63340/heroku_ssbbj5hb');
 app.engine("html", engines.nunjucks) // dont forget to install nunjucks
 app.set("view engine", "html")
 app.set("views", __dirname + '/views')
@@ -20,20 +20,20 @@ app.use(methodOverride("_method"));
 app.set('port', (process.env.PORT || 5000));
 
 
-// // MONGOOSE/MODEL CONFIG
-// let recipeSchema = mongoose.Schema({
-//   title: String, // or could be written as {type: String}
-//   image: String,
-//   body: String,
-//   created: {type: Date, default: Date.now}
-// })
-// let Recipe = mongoose.model('recipe', recipeSchema);
+// MONGOOSE/MODEL CONFIG
+let recipeSchema = mongoose.Schema({
+  title: String, // or could be written as {type: String}
+  image: String,
+  body: String,
+  created: {type: Date, default: Date.now}
+})
+let Recipe = mongoose.model('recipe', recipeSchema);
 
-// recipe.create({
-//   title: "Chilli Beans",
-//   image: "http://img.taste.com.au/eii6jtFD/w720-h480-cfill-q80/taste/2016/11/smokey-chilli-beans-83839-1.jpeg",
-//   body: "Recipe goes here"
-// })
+recipe.create({
+  title: "Chilli Beans",
+  image: "http://img.taste.com.au/eii6jtFD/w720-h480-cfill-q80/taste/2016/11/smokey-chilli-beans-83839-1.jpeg",
+  body: "Recipe goes here"
+})
 
 // RESTFUL ROUTES
 
