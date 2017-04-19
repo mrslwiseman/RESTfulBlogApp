@@ -3,18 +3,18 @@
 
 
 <div class="ui main text container segment">
-  <div class="ui huge header">{{recipe.title}}</div>
+
   <div class="ui top attached">
-    <div class="item">
+
       <img class="ui centered rounded image" src="{{recipe.image}}" />
-      <div class="content">
-        {{recipe.created.toDateString()}}
-      </div>
-      <div class="description">
+      <div class="ui header">{{recipe.title}}</div>
+      <div class="recipeDate ui container center aligned">{{recipe.created.toDateString()}}</div>
+
+      <div class="ui text container">
         {{ recipe.body | safe }}
       </div>
 
-
+  <div class="ui horizontal divider"></div>
 
 <form action="/recipes/{{recipe._id}}?_method=DELETE" method="POST">
   <a class="ui button" href="{{recipe["_id"]}}/edit">Edit</a>
@@ -24,7 +24,7 @@
 
 
 
-    </div>
+
 
   </div>
 

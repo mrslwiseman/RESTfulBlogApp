@@ -1,11 +1,17 @@
 {% include "partials/header.html" %}
 
+
+
+
+<div class="ui main container">
 <h1>Recipes Page</h1>
+<div class="ui main text container">
 <ul>
 {% for recipe in recipes %}
-
-<img src="{{recipe.image}}" />
-<li><a href="../recipes/{{recipe["_id"]}}"> {{recipe.title}}</a></li>
+<div class="ui segment container">
+<a href="../recipes/{{recipe["_id"]}}">
+<img class="ui fluid image" src="{{recipe.image}}" />
+<h3 class="recipeTitle">{{recipe.title}}</h3>
 {% set body = recipe.body %}
 
 
@@ -13,10 +19,16 @@
 {% set body = body.substring(0,100) + " ..."%}
 {% endif %}
 
- <li>{{body}}</li>
-<li>{{recipe.created.toDateString()}}</li>
+ <p class="recipeDesc">{{body}}</p>
+<div class="recipeDate ui container center aligned">{{recipe.created.toDateString()}}</div>
+</a>
+</div>
 {% endfor %}
+
 </ul>
 
+</div>
+</div>
+
+
 {% include "partials/footer.html" %}
-<div>

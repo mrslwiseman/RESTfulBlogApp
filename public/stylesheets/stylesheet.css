@@ -1,6 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Lora|Roboto+Condensed');
+
+.ui {
+  font-family: 'Lora', serif !important
+}
+
+* {
+  box-sizing: border-box;
+}
+
 i.icon {
   font-size: 2em;
 }
 .main.container {
-margin-top: 7em;  
+margin-top: 7em;
+}
+
+.container img {
+  width:100%;
+}
+
+a {
+  color: inherit;
+
+}
+
+li {
+  list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6, .header, .item, .listDate  {
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif !important;
+
+}
+  .recipeDesc{
+
+  }
+    .recipeDate{
+      font-size: .9em;
+      color:#aaa;
+
+    }
+
+ul {
+  padding: 0;
 }
