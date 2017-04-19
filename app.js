@@ -8,23 +8,23 @@ let express         = require('express'),
     app             = express();
 
 //APP CONFIG
-mongoose.connect('mongodb://localhost/restful_recipe_app');
-app.engine("html", engines.nunjucks) // dont forget to install nunjucks
-app.set("view engine", "html")
-app.set("views", __dirname + '/views')
-app.use(express.static("public"));
-app.use(express.static("semantic"));
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(expressSanitizer()); // this line follows bodyParser() instantiations
-app.use(methodOverride("_method"));
-// MONGOOSE/MODEL CONFIG
-let recipeSchema = mongoose.Schema({
-  title: String, // or could be written as {type: String}
-  image: String,
-  body: String,
-  created: {type: Date, default: Date.now}
-})
-let Recipe = mongoose.model('recipe', recipeSchema);
+// mongoose.connect('mongodb://localhost/restful_recipe_app');
+// app.engine("html", engines.nunjucks) // dont forget to install nunjucks
+// app.set("view engine", "html")
+// app.set("views", __dirname + '/views')
+// app.use(express.static("public"));
+// app.use(express.static("semantic"));
+// app.use(bodyParser.urlencoded({extended:true}));
+// app.use(expressSanitizer()); // this line follows bodyParser() instantiations
+// app.use(methodOverride("_method"));
+// // MONGOOSE/MODEL CONFIG
+// let recipeSchema = mongoose.Schema({
+//   title: String, // or could be written as {type: String}
+//   image: String,
+//   body: String,
+//   created: {type: Date, default: Date.now}
+// })
+// let Recipe = mongoose.model('recipe', recipeSchema);
 
 // recipe.create({
 //   title: "Chilli Beans",
@@ -36,7 +36,8 @@ let Recipe = mongoose.model('recipe', recipeSchema);
 
 //1. INDEX
 app.get("/", (req,res) => {
-  res.redirect("/recipes")
+res.send("heroku app working!")
+//  res.redirect("/recipes")
 })
 
 app.get("/recipes", (req,res) => {
