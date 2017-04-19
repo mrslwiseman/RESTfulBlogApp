@@ -113,12 +113,18 @@ app.put("/recipes/:id", (req,res) => {
 
 
 //7. DESTROY
-app.delete("/recipes/:id", (req,res)=> {
-
-  Recipe.remove({ "_id": req.params.id }, function (err) {
-    if (err) return handleError(err);
-    // removed!
-  });
+// DELETE ROUTE
+app.delete("/blogs/:id", function(req, res){
+   //destroy blog
+   Recuipe.findByIdAndRemove(req.params.id, function(err){
+       if(err){
+           res.redirect("/recipes");
+       } else {
+           res.redirect("/recipes");
+       }
+   })
+   //redirect somewhere
+});
 
 
 res.redirect("/recipes")
