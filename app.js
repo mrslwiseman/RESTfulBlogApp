@@ -124,12 +124,11 @@ app.delete("/blogs/:id", function(req, res){
        }
    })
    //redirect somewhere
+   res.redirect("/recipes")
 });
 
 
-res.redirect("/recipes")
 
-})
 
 
 
