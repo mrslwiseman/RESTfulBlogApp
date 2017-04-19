@@ -28,12 +28,12 @@ let recipeSchema = mongoose.Schema({
   created: {type: Date, default: Date.now}
 })
 let Recipe = mongoose.model('recipe', recipeSchema);
-
-recipe.create({
-  title: "Chilli Beans",
-  image: "http://img.taste.com.au/eii6jtFD/w720-h480-cfill-q80/taste/2016/11/smokey-chilli-beans-83839-1.jpeg",
-  body: "Recipe goes here"
-})
+// 
+// recipe.create({
+//   title: "Chilli Beans",
+//   image: "http://img.taste.com.au/eii6jtFD/w720-h480-cfill-q80/taste/2016/11/smokey-chilli-beans-83839-1.jpeg",
+//   body: "Recipe goes here"
+// })
 
 // RESTFUL ROUTES
 
