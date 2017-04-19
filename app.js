@@ -9,14 +9,17 @@ let express         = require('express'),
 
 //APP CONFIG
 // mongoose.connect('mongodb://localhost/restful_recipe_app');
-// app.engine("html", engines.nunjucks) // dont forget to install nunjucks
-// app.set("view engine", "html")
-// app.set("views", __dirname + '/views')
-// app.use(express.static("public"));
-// app.use(express.static("semantic"));
-// app.use(bodyParser.urlencoded({extended:true}));
-// app.use(expressSanitizer()); // this line follows bodyParser() instantiations
-// app.use(methodOverride("_method"));
+app.engine("html", engines.nunjucks) // dont forget to install nunjucks
+app.set("view engine", "html")
+app.set("views", __dirname + '/views')
+app.use(express.static("public"));
+app.use(express.static("semantic"));
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(expressSanitizer()); // this line follows bodyParser() instantiations
+app.use(methodOverride("_method"));
+app.set('port', (process.env.PORT || 5000));
+
+
 // // MONGOOSE/MODEL CONFIG
 // let recipeSchema = mongoose.Schema({
 //   title: String, // or could be written as {type: String}
@@ -129,6 +132,11 @@ res.redirect("/recipes")
 
 
 // LISTEN
-app.listen(3000, () => {
-  console.log("server listening on port 3000")
-})
+// app.listen(3000, () => {
+//   console.log("server listening on port 3000")
+// })
+// heroku:
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
